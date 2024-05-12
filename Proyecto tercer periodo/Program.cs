@@ -2,7 +2,7 @@
 {
     public static void Main(string[] args)
     {
-        int salida, vehiculo, pago, zona, lugar, parqueo1 = 6, parqueo2 = 5;
+        int salida, vehiculo, pago, zona, lugar, parqueo1 = 6, parqueo2 = 5, parqueo3 = 9;
         Console.WriteLine("  //////////////////////////////     Estacionamiento     ////////////////////////// ");
         Console.WriteLine("");
         Console.WriteLine("");
@@ -117,8 +117,7 @@
                             lugar = int.Parse(Console.ReadLine());
                         }
                         break;
-                } 
-                break;
+                }
                 break;
             case 2:
                 int fi = 19;
@@ -149,3 +148,41 @@
                 int columna = 69;
                 switch (zona)
                 {
+                    case 1:
+                        Console.WriteLine("");
+                        Console.WriteLine("Parqueos disponibles de la zona");
+                        Console.WriteLine("   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15");
+                        int filaColoreadaa = 6;
+                        int columnaColoreadaInicioo = 2;
+                        int columnaColoreadaFinn = 44;
+                        for (int i = 2; i < filas; i++)
+                        {
+                            for (int j = 7; j < columnas; j++)
+                            {
+                                if (j == 0 || j == columna - 1 || i == 18 || i == fila + 0 || j % 4 == 0 || (j >= columnaColoreadaInicioo && j <= columnaColoreadaFinn && i == filaColoreadaa))
+                                {
+                                    Console.Write("*");
+                                }
+                                else
+                                {
+                                    Console.Write(" ");
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        Console.WriteLine("Por favor ingrese un luga disponible de la zona");
+                        lugar = int.Parse(Console.ReadLine());
+                        while (parqueo3 >= lugar)
+                        {
+                            Console.WriteLine("Por favor ingrese un parqueo disponible");
+                            lugar = int.Parse(Console.ReadLine());
+                        }
+                        break;
+                    case 2:
+
+                   break;
+                }
+           break;
+        }
+    }
+}
