@@ -2,7 +2,7 @@
 {
     public static void Main(string[] args)
     {
-        int salida, vehiculo, pago, zona, lugar, parqueo1 = 6, parqueo2 = 5, parqueo3 = 9;
+        int salida, vehiculo, pago, zona, lugar, parqueo1 = 6, parqueo2 = 5, parqueo3 = 9, parqueo4 = 7;
         Console.WriteLine("  //////////////////////////////     Estacionamiento     ////////////////////////// ");
         Console.WriteLine("");
         Console.WriteLine("");
@@ -180,9 +180,45 @@
                         break;
                     case 2:
 
-                   break;
+                        Console.WriteLine("");
+                        Console.WriteLine("Parqueos disponibles de la zona");
+                        int filaColoreadaaa = 15;
+                        int columnaColoreadaIniciooo = 32;
+                        int columnaColoreadaFinnn = 68;
+                        // Posición de la fila y columna para colorear
+
+                        for (int i = 2; i < filas; i++)
+                        {
+                            for (int j = 7; j < columnas; j++)
+                            {
+                                // Si está en el borde o en la fila/columna coloreada, imprime un asterisco
+                                if (j == 5 || j == columna - 1 || i == 2 || i == fila - 7 || j % 4 == 0 || (j >= columnaColoreadaIniciooo && j <= columnaColoreadaFinnn && i == filaColoreadaaa))
+                                {
+                                    Console.Write("*");
+                                }
+                                else
+                                {
+                                    Console.Write(" ");
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        Console.WriteLine("   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15");
+                        Console.WriteLine("");
+                        Console.WriteLine("Por favor ingrese un luga disponible de la zona");
+                        lugar = int.Parse(Console.ReadLine());
+                        while (parqueo4 <= lugar)
+                        {
+                            Console.WriteLine("Por favor ingrese un parqueo disponible");
+                            lugar = int.Parse(Console.ReadLine());
+                        }
+
+                        break;
                 }
-           break;
+                break;
         }
+        Console.Clear();
+        Random rnd = new Random();
+        int numeroAleatorio = rnd.Next(100, 999);
     }
 }
