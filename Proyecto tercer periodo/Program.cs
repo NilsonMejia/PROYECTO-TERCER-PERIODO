@@ -220,5 +220,46 @@
         Console.Clear();
         Random rnd = new Random();
         int numeroAleatorio = rnd.Next(100, 999);
+
+        Console.WriteLine("");
+        Console.WriteLine("************************************************");
+        Console.WriteLine("************************************************");
+        Console.WriteLine("************************************************");
+        Console.WriteLine("************************************************");
+        Console.WriteLine("***************Su código es: " + numeroAleatorio + "****************");
+        Console.WriteLine("************************************************");
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("************************************************");
+        Console.WriteLine("************************************************");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("************************************************");
+        Console.WriteLine("************************************************");
+        Console.WriteLine("************************************************");
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("Disfrute de su estancia");
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine("//////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
+        Console.ForegroundColor = ConsoleColor.White;
+
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("Registro de pago ");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("");
+        Console.WriteLine("Por favor ingrese el código");
+        salida = int.Parse(Console.ReadLine());
+
+        while (numeroAleatorio != salida)
+        {
+            Console.WriteLine("¡¡¡¡CÓDIGO INCORRECTO!!!!");
+            Console.WriteLine("Por favor ingrese el código que se le brindó en la entrada:");
+            salida = int.Parse(Console.ReadLine());
+        }
+
+
     }
 }
