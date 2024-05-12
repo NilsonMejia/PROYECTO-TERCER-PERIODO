@@ -117,11 +117,35 @@
                             lugar = int.Parse(Console.ReadLine());
                         }
                         break;
+                } 
+                break;
+                break;
+            case 2:
+                int fi = 19;
+                int colu = 69;
+                Console.WriteLine("                           ZONA NORTE");
+                for (int i = 2; i < fi; i++)
+                {
+                    for (int j = 7; j < colu; j++)
+                    {
+                        if (j == 0 || j == colu - 1 || i == 0 || i == fi - 9 || j % 4 == 0)
+                        {
+                            Console.Write("*");
+                        }
+                        else
+                        {
+                            Console.Write(" ");
+                        }
+                    }
+                    Console.WriteLine();
                 }
-                break;
-                break;
-
-        }
-    }
-}
-
+                Console.WriteLine("                              ZONA SUR");
+                Console.WriteLine(" ");
+                Console.WriteLine("Por favor selecciones lugar de estacionamiento");
+                Console.WriteLine(" 1. ZONA NORTE      2. ZONA SUR ");
+                zona = int.Parse(Console.ReadLine());
+                Console.Clear();
+                int fila = 1;
+                int columna = 69;
+                switch (zona)
+                {
