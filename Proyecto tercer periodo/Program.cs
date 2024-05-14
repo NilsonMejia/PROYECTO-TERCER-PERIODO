@@ -1,4 +1,6 @@
-﻿class Estacionamineto
+﻿using System.Diagnostics;
+
+class Estacionamineto
 {
     public static void Main(string[] args)
     {
@@ -260,6 +262,18 @@
             salida = int.Parse(Console.ReadLine());
         }
 
+        stopwatch.Stop();
+        TimeSpan tiempoTranscurrido = stopwatch.Elapsed;
 
+        Console.WriteLine($"Tiempo transcurrido: {tiempoTranscurrido.Hours:00}:{tiempoTranscurrido.Minutes:00}:{tiempoTranscurrido.Seconds:00}");
+        Console.WriteLine(" ");
+        Console.WriteLine(" ");
+        Console.WriteLine("Ingrese el metodo de pago");
+        Console.WriteLine("1. Pago en efectivo      2. Tarteja de credito/debito");
+        pago = int.Parse(Console.ReadLine());
+        Console.Clear();
+        double cobro, pago2;
+        cobro = tiempoTranscurrido.TotalMinutes;
+        DateTime fechaActual = DateTime.Now;
     }
 }
