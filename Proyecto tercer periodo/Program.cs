@@ -18,6 +18,8 @@ class Estacionamineto
         vehiculo = int.Parse(Console.ReadLine());
         Console.WriteLine("");
 
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
         int filas = 19;
         int columnas = 70;
         switch (vehiculo)
