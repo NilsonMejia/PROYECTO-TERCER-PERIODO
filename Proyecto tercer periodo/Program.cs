@@ -277,5 +277,20 @@ class Estacionamineto
         double cobro, pago2;
         cobro = tiempoTranscurrido.TotalMinutes;
         DateTime fechaActual = DateTime.Now;
+
+        switch (pago)
+        {
+            case 1:
+                Console.WriteLine("Monto a cobrar:" + cobro.ToString("F2"));
+                Console.WriteLine("");
+                Console.WriteLine("ingrese el pago");
+                pago2 = double.Parse(Console.ReadLine());
+                while (pago2 < 0.09)
+                {
+                    Console.WriteLine("por favor ingrese un billete o moneda oficial");
+                    pago2 = double.Parse(Console.ReadLine());
+                }
+                break;
+        }
     }
 }
