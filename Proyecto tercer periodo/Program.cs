@@ -5,6 +5,7 @@ class Estacionamineto
     public static void Main(string[] args)
     {
         int salida, vehiculo, pago, zona, lugar, parqueo1 = 6, parqueo2 = 5, parqueo3 = 9, parqueo4 = 7;
+        double cambio;
         Console.WriteLine("  //////////////////////////////     Estacionamiento     ////////////////////////// ");
         Console.WriteLine("");
         Console.WriteLine("");
