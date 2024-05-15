@@ -290,6 +290,39 @@ class Estacionamineto
                     Console.WriteLine("por favor ingrese un billete o moneda oficial");
                     pago2 = double.Parse(Console.ReadLine());
                 }
+                if (pago2 >= 0.10)
+                {
+                    Console.WriteLine(" ");
+                    cambio = pago2 - cobro;
+                    if (pago2 > cobro)
+                    {
+                        Console.WriteLine("SU PAGO SE REALIZO CON EXITO");
+                    }
+                    while (pago2 <= cobro)
+                    {
+                        Console.WriteLine("¡¡ERROR!! Por favor ingrese un billete o moneda de mayor valor");
+                        pago2 = double.Parse(Console.ReadLine());
+                    }
+                    cambio = pago2 - cobro;
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    Console.WriteLine("*");
+                    Console.WriteLine("*");
+                    Console.WriteLine("**********************  FACTURA  ************************");
+                    Console.WriteLine("*");
+                    Console.WriteLine("******* tiempo ------------------------- " + tiempoTranscurrido.TotalMinutes.ToString("F2") + " ***********");
+                    Console.WriteLine("******* monto total -------------------- " + cobro.ToString("F2") + " ***********");
+                    Console.WriteLine("******* pago --------------------------- " + pago2.ToString("F2") + " ***********");
+                    Console.WriteLine("******* cambio ------------------------- " + cambio.ToString("F2") + " ***********");
+                    Console.WriteLine("*");
+                    Console.WriteLine("******* fecha ----------------- " + fechaActual + " *******");
+                    Console.WriteLine("******* codigo ---------------- " + numeroAleatorio + " *********************");
+                    Console.WriteLine("*");
+                    Console.WriteLine("*");
+                    Console.WriteLine("*");
+                    Console.WriteLine("*");
+                }
                 break;
         }
     }
