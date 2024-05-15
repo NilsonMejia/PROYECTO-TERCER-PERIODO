@@ -4,7 +4,7 @@ class Estacionamineto
 {
     public static void Main(string[] args)
     {
-        int salida, vehiculo, pago, zona, lugar, parqueo1 = 6, parqueo2 = 5, parqueo3 = 9, parqueo4 = 7;
+        int salida, vehiculo, pago, zona, lugar, tarjeta, parqueo1 = 6, parqueo2 = 5, parqueo3 = 9, parqueo4 = 7;
         double cambio;
         Console.WriteLine("  //////////////////////////////     Estacionamiento     ////////////////////////// ");
         Console.WriteLine("");
@@ -324,6 +324,39 @@ class Estacionamineto
                     Console.WriteLine("*");
                     Console.WriteLine("*");
                 }
+                break;
+            case 2:
+                Console.WriteLine("Monto a cobrar:" + cobro.ToString("F2"));
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("Ingrese su PIN de 4 dígitos");
+                tarjeta = int.Parse(Console.ReadLine());
+
+                while (tarjeta < 1000 || tarjeta > 9999)
+                {
+                    Console.WriteLine("Por favor, ingrese un PIN de 4 dígitos");
+                    tarjeta = int.Parse(Console.ReadLine());
+                }
+                Console.Clear();
+                Console.WriteLine("");
+                Console.WriteLine("SU COBRO SE REALIZO CON EXITO");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("*");
+                Console.WriteLine("*");
+                Console.WriteLine("**********************  FACTURA  ************************");
+                Console.WriteLine("*");
+                Console.WriteLine("******* tiempo ------------------------- " + tiempoTranscurrido.TotalMinutes.ToString("F2") + " ***********");
+                Console.WriteLine("******* monto total -------------------- " + cobro.ToString("F2") + " ***********");
+                Console.WriteLine("******* pago ------------------- " + "con tarjeta " + " ***********");
+                Console.WriteLine("*");
+                Console.WriteLine("******* fecha ----------------- " + fechaActual + " *******");
+                Console.WriteLine("******* codigo ---------------- " + numeroAleatorio + " *********************");
+                Console.WriteLine("*");
+                Console.WriteLine("*");
+                Console.WriteLine("*");
+                Console.WriteLine("*");
                 break;
         }
     }
