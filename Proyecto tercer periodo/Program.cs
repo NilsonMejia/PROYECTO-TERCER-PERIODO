@@ -359,5 +359,20 @@ class Estacionamineto
                 Console.WriteLine("*");
                 break;
         }
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine("//////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
+        Console.ForegroundColor = ConsoleColor.White;
+
+        Console.WriteLine("");
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+        Console.WriteLine("Registro de salida ");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("Por favor ingrese el código de factura");
+        salida = int.Parse(Console.ReadLine());
+        Console.WriteLine("");
     }
 }
