@@ -374,5 +374,18 @@ class Estacionamineto
         Console.WriteLine("Por favor ingrese el código de factura");
         salida = int.Parse(Console.ReadLine());
         Console.WriteLine("");
+
+        while (numeroAleatorio != salida)
+        {
+            Console.WriteLine("¡¡¡¡CÓDIGO INCORRECTO!!!!");
+            Console.WriteLine("Por favor ingrese el código establecido en la factura:");
+            salida = int.Parse(Console.ReadLine());
+        }
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Gracias por visitarnos. Que tenga buen viaje.");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.ReadKey();
     }
 }
