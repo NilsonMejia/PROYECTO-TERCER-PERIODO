@@ -149,17 +149,10 @@ class Estacionamineto
                 Console.WriteLine("presione ENTER para obtener su codigo");
                 Console.ReadKey();
                 Console.Clear();
-                break;
-            //Empieza el case de motos
-                Console.WriteLine("¿desea cambiar su parqueo?");
-                    Console.WriteLine("1. SI     2. NO");
-                    parqueo = int.Parse(Console.ReadLine());
-                    Console.Clear();
-        }
-                while (parqueo == nuevolugar);
+                //Empieza el case de moto
                 break;
             case 2:
-               
+
             break;
         }
         Console.Clear();
