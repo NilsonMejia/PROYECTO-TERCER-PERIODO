@@ -157,6 +157,7 @@ class Estacionamineto
                 int tamañoCuadroo = 8; // tamaño de cada cuadro
 
                 int nuevolugar2 = 1;
+
                 do
                 {
                     DibujarCuadroGrandee(fila, columna, tamañoCuadroo);
@@ -272,7 +273,7 @@ class Estacionamineto
                     Console.Clear();
                 }
                 while (parqueo == nuevolugar2);
-            break;
+                break;
         }
         Console.Clear();
         Random rnd = new Random();
@@ -433,6 +434,8 @@ class Estacionamineto
             Console.WriteLine("Por favor ingrese el código establecido en la factura:");
             salida = int.Parse(Console.ReadLine());
         }
+        
+
         Console.WriteLine("");
         Console.WriteLine("");
         Console.ForegroundColor = ConsoleColor.Green;
