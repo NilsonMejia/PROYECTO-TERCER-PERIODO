@@ -133,7 +133,7 @@ class Estacionamineto
                         Console.ResetColor();
                     }
                     //aqui va pegar el siguiente
-                    //se va pegar de desde donde dice "empieza el otro graficador"
+                    
 
                     Console.WriteLine("¿desea cambiar su parqueo?");
                     Console.WriteLine("1. SI     2. NO");
