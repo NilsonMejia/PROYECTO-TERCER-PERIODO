@@ -212,9 +212,54 @@ class Estacionamineto
                         return valor;
                     }
 
-                    // Hasta aqui llegue
+                    static void DibujarCuadroGrande(int fila, int columna, int tamañoCuadroo, int filaSeleccionada, int columnaSeleccionada)
+                    {
+                        int alturaTotal = fila * tamañoCuadroo;
+                        int anchuraTotal = columna * tamañoCuadroo;
 
-                    break;
+                        for (int i = 0; i < alturaTotal; i++)
+                        {
+                            for (int j = 0; j < anchuraTotal; j++)
+                            {
+                                // Determinar en qué cuadro se encuentra la posición actual
+                                int filaActual = i / tamañoCuadroo;
+                                int columnaActual = j / tamañoCuadroo;
+
+                                if (filaActual == filaSeleccionada && columnaActual == columnaSeleccionada)
+                                {
+                                    // Colorear el cuadro seleccionado en rojo
+                                    if (EsBordeCuadro(i, j, tamañoCuadroo))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write("*");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write(" ");
+                                    }
+                                }
+                                else
+                                {
+                                    // Colorear los cuadros no seleccionados en verde
+                                    if (EsBordeCuadro(i, j, tamañoCuadroo))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write("*");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write(" ");
+                                    }
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+
+                    }
+
+                        break;
         }
         Console.Clear();
         Random rnd = new Random();
