@@ -257,9 +257,22 @@ class Estacionamineto
                             Console.WriteLine();
                         }
 
+                        Console.WriteLine("************************************************************************************************");
+                        Console.ResetColor();
                     }
 
-                        break;
+                    static bool EsBordeCuadro(int i, int j, int tamañoCuadro)
+                    {
+                        return (i % tamañoCuadro == 0 || j % tamañoCuadro == 0 || i % tamañoCuadro == tamañoCuadro - 3 || j % tamañoCuadro == tamañoCuadro - 1);
+                    }
+
+                    Console.WriteLine("¿desea cambiar su parqueo?");
+                    Console.WriteLine("1. SI     2. NO");
+                    parqueo = int.Parse(Console.ReadLine());
+                    Console.Clear();
+                }
+                while (parqueo == nuevolugar2);
+            break;
         }
         Console.Clear();
         Random rnd = new Random();
