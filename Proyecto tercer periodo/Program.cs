@@ -61,7 +61,77 @@ class Estacionamineto
                     {
                         return (i % tamañoCuadro == 0 || j % tamañoCuadro == 0 || i % tamañoCuadro == tamañoCuadro - 3 || j % tamañoCuadro == tamañoCuadro - 1);
                     }
+                    /////////////////////////////////////////////////////////////EMPIEZA EL OTRO GRAFICADOR /////////////////////////////////////////////////////////////////
+                    int filaSeleccionada = ObtenerEntradaUsuario("Seleccione el número de fila del cuadro (1 a " + filas + "): ", 1, filas) - 1;
+                    int columnaSeleccionada = ObtenerEntradaUsuario("Seleccione el número de columna del cuadro (1 a " + columnas + "): ", 1, columnas) - 1;
 
+                    DibujarCuadroGrandee(filas, columnas, tamañoCuadro, filaSeleccionada, columnaSeleccionada);
+
+                    static int ObtenerEntradaUsuario(string mensaje, int minimo, int maximo)
+                    {
+                        int valor;
+                        while (true)
+                        {
+                            Console.WriteLine(mensaje);
+                            if (int.TryParse(Console.ReadLine(), out valor) && valor >= minimo && valor <= maximo)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Error: Por favor, introduzca un número entre {minimo} y {maximo}.");
+                            }
+                        }
+                        return valor;
+                    }
+
+                    static void DibujarCuadroGrandee(int filas, int columnas, int tamañoCuadro, int filaSeleccionada, int columnaSeleccionada)
+                    {
+                        int alturaTotal = filas * tamañoCuadro;
+                        int anchuraTotal = columnas * tamañoCuadro;
+
+                        for (int i = 0; i < alturaTotal; i++)
+                        {
+                            for (int j = 0; j < anchuraTotal; j++)
+                            {
+                                // Determina la pocision en la que se encuentra
+                                int filaActual = i / tamañoCuadro;
+                                int columnaActual = j / tamañoCuadro;
+
+                                if (filaActual == filaSeleccionada && columnaActual == columnaSeleccionada)
+                                {
+                                    // Colorear el cuadro seleccionado en rojo
+                                    if (EselBordeCuadro(i, j, tamañoCuadro))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write("*");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write(" ");
+                                    }
+                                }
+                                else
+                                {
+                                    // Colorear los cuadros que no estan seleccionados en verde
+                                    if (EselBordeCuadro(i, j, tamañoCuadro))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write("*");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write(" ");
+                                    }
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        Console.WriteLine("");
+                        Console.ResetColor();
+                    }
                     //aqui va pegar el siguiente
                     //se va pegar de desde donde dice "empieza el otro graficador"
 
