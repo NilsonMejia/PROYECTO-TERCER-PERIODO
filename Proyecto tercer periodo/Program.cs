@@ -184,6 +184,34 @@ class Estacionamineto
                         Console.WriteLine(new string('*', anchuraTotal));
                     }
 
+                    static bool EselBordeCuadro(int i, int j, int tamañoCuadroo)
+                    {
+                        return (i % tamañoCuadroo == 0 || j % tamañoCuadroo == 0 || i % tamañoCuadroo == tamañoCuadroo - 3 || j % tamañoCuadroo == tamañoCuadroo - 1);
+                    }
+                    /////////////////////////////////////////////////////////////EMPIEZA EL OTRO GRAFICADOR /////////////////////////////////////////////////////////////////
+                    int filaSeleccionada = ObtenerEntradaUsuario("Seleccione el número de fila del cuadro (1 a " + fila + "): ", 1, fila) - 1;
+                    int columnaSeleccionada = ObtenerEntradaUsuario("Seleccione el número de columna del cuadro (1 a " + columna + "): ", 1, columna) - 1;
+
+                    DibujarCuadroGrande(fila, columna, tamañoCuadroo, filaSeleccionada, columnaSeleccionada);
+
+                    static int ObtenerEntradaUsuario(string mensaje, int minimo, int maximo)
+                    {
+                        int valor;
+                        while (true)
+                        {
+                            Console.WriteLine(mensaje);
+                            if (int.TryParse(Console.ReadLine(), out valor) && valor >= minimo && valor <= maximo)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Error: Por favor, introduzca un número entre {minimo} y {maximo}.");
+                            }
+                        }
+                        return valor;
+                    }
+
 
 
 
