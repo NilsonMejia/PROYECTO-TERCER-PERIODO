@@ -152,8 +152,42 @@ class Estacionamineto
                 //Empieza el case de moto
                 break;
             case 2:
+                int fila = 6; // cantidad de cuadros en fila
+                int columna = 12; // cantidad de cuadros en columno
+                int tamañoCuadroo = 8; // tamaño de cada cuadro
 
-            break;
+                int nuevolugar2 = 1;
+                do
+                {
+                    DibujarCuadroGrandee(fila, columna, tamañoCuadroo);
+
+                    static void DibujarCuadroGrandee(int fila, int columna, int tamañoCuadroo)
+                    {
+                        int alturaTotal = fila * tamañoCuadroo;
+                        int anchuraTotal = columna * tamañoCuadroo;
+
+                        for (int i = 0; i < alturaTotal; i++)
+                        {
+                            for (int j = 0; j < anchuraTotal; j++)
+                            {
+                                if (EselBordeCuadro(i, j, tamañoCuadroo))
+                                {
+                                    Console.Write("*");
+                                }
+                                else
+                                {
+                                    Console.Write(" ");
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        Console.WriteLine(new string('*', anchuraTotal));
+                    }
+
+
+
+
+                    break;
         }
         Console.Clear();
         Random rnd = new Random();
