@@ -358,24 +358,29 @@ class Estacionamineto
                         pago2 = double.Parse(Console.ReadLine());
                     }
                     cambio = pago2 - cobro;
+
                     Console.WriteLine("");
                     Console.WriteLine("");
                     Console.WriteLine("");
-                    Console.WriteLine("*");
-                    Console.WriteLine("*");
-                    Console.WriteLine("**********************  FACTURA  ************************");
-                    Console.WriteLine("*");
-                    Console.WriteLine("******* tiempo ------------------------- " + tiempoTranscurrido.TotalMinutes.ToString("F2") + " ***********");
-                    Console.WriteLine("******* monto total -------------------- " + cobro.ToString("F2") + " ***********");
-                    Console.WriteLine("******* pago --------------------------- " + pago2.ToString("F2") + " ***********");
-                    Console.WriteLine("******* cambio ------------------------- " + cambio.ToString("F2") + " ***********");
-                    Console.WriteLine("*");
-                    Console.WriteLine("******* fecha ----------------- " + fechaActual + " *******");
-                    Console.WriteLine("******* codigo ---------------- " + numeroAleatorio + " *********************");
-                    Console.WriteLine("*");
-                    Console.WriteLine("*");
-                    Console.WriteLine("*");
-                    Console.WriteLine("*");
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.WriteLine("+***********************************************************************+");
+                    Console.WriteLine("|                                                                       |");
+                    Console.WriteLine("|         *********************  FACTURA  ************************      |");
+                    Console.WriteLine("|                                                                       |");
+                    Console.WriteLine("|         ****** tiempo ------------------------- " + tiempoTranscurrido.TotalMinutes.ToString("F2") + " ***********" + "      |");
+                    Console.WriteLine("|         ****** monto total -------------------- " + cobro.ToString("F2") + " ***********" + "      |");
+                    Console.WriteLine("|         ****** pago --------------------------- " + pago2.ToString("F2") + " ********** " + "      |");
+                    Console.WriteLine("|         ****** cambio ------------------------- " + cambio.ToString("F2") + " **********" + "       |");
+                    Console.WriteLine("|                                                                       |");
+                    Console.WriteLine("|         ***** fecha ----------------- " + fechaActual + " *******" + "      |");
+                    Console.WriteLine("|         ****** codigo ---------------- " + numeroAleatorio + " *********************" + "      |");
+                    Console.WriteLine("|                                                                       |");
+                    Console.WriteLine("|                                                                       |");
+                    Console.WriteLine("|                                                                       |");
+                    Console.WriteLine("+***********************************************************************+");
+                    Console.ResetColor();
+
                 }
                 break;
             case 2:
@@ -396,20 +401,23 @@ class Estacionamineto
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("");
-                Console.WriteLine("*");
-                Console.WriteLine("*");
-                Console.WriteLine("**********************  FACTURA  ************************");
-                Console.WriteLine("*");
-                Console.WriteLine("******* tiempo ------------------------- " + tiempoTranscurrido.TotalMinutes.ToString("F2") + " ***********");
-                Console.WriteLine("******* monto total -------------------- " + cobro.ToString("F2") + " ***********");
-                Console.WriteLine("******* pago ------------------- " + "con tarjeta " + " ***********");
-                Console.WriteLine("*");
-                Console.WriteLine("******* fecha ----------------- " + fechaActual + " *******");
-                Console.WriteLine("******* codigo ---------------- " + numeroAleatorio + " *********************");
-                Console.WriteLine("*");
-                Console.WriteLine("*");
-                Console.WriteLine("*");
-                Console.WriteLine("*");
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("+***********************************************************************+");
+                Console.WriteLine("|                                                                       |");
+                Console.WriteLine("|         *********************  FACTURA  ************************      |");
+                Console.WriteLine("|                                                                       |");
+                Console.WriteLine("|         ******* tiempo ------------------------- " + tiempoTranscurrido.TotalMinutes.ToString("F2") + " **********" + "      |");
+                Console.WriteLine("|         ******* monto total -------------------- " + cobro.ToString("F2") + "***********      |");
+                Console.WriteLine("|         ******* pago ------------------- " + "con tarjeta " + " **********" + "      |");
+                Console.WriteLine("|                                                                       |");
+                Console.WriteLine("|         ***** fecha ----------------- " + fechaActual + " *******" + "      |");
+                Console.WriteLine("|         ****** codigo ---------------- " + numeroAleatorio + " *********************" + "      |");
+                Console.WriteLine("|                                                                       |");
+                Console.WriteLine("|                                                                       |");
+                Console.WriteLine("|                                                                       |");
+                Console.WriteLine("+***********************************************************************+");
+                Console.ResetColor();
                 break;
         }
         Console.WriteLine("");
