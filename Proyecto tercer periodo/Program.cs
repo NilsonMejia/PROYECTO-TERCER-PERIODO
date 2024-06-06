@@ -868,3 +868,60 @@ class Program
                 while (parqueo == nuevolugar4);
                 break;
         }
+        Random rnd = new Random();    //Llama un numero aleatorio de 3 digitos 
+        int numeroAleatorio = rnd.Next(100, 999);
+
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("Su código es: " + numeroAleatorio + "*");
+        Console.WriteLine("");
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("Disfrute de su estancia");
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine("//////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
+        Console.ForegroundColor = ConsoleColor.White;
+
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("Registro de pago ");   //INICIA REGISTRO DE PAGO
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("");
+        Console.WriteLine("Por favor ingrese el código");
+        salida = int.Parse(Console.ReadLine());
+
+        while (numeroAleatorio != salida)
+        {
+            Console.WriteLine("¡¡¡¡CÓDIGO INCORRECTO!!!!");
+            Console.WriteLine("Por favor ingrese el código que se le brindó en la entrada:");
+            salida = int.Parse(Console.ReadLine());
+        }
+
+        stopwatch.Stop(); //Termina el tiempo 
+        TimeSpan tiempoTranscurrido = stopwatch.Elapsed;
+
+        Console.WriteLine($"Tiempo transcurrido: {tiempoTranscurrido.Hours:00}:{tiempoTranscurrido.Minutes:00}:{tiempoTranscurrido.Seconds:00}"); //Muestra el tiempo transcurrido 
+        Console.WriteLine(" ");
+        Console.WriteLine(" ");
+        Console.WriteLine("Ingrese el metodo de pago");
+        Console.WriteLine("1. Pago en efectivo      2. Tarteja de credito/debito      3.codigo de peronsal autorizado");
+        pago = int.Parse(Console.ReadLine());
+        Console.Clear();
+        double cobro, pago2;
+        cobro = tiempoTranscurrido.TotalMinutes;
+        DateTime fechaActual = DateTime.Now;
+        switch (pago)
+        {
