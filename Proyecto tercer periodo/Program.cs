@@ -996,3 +996,63 @@ class Program
                     Console.WriteLine("*");
                 }
                 break;
+            case 2:
+                Console.WriteLine("Monto a cobrar:" + cobro.ToString("F2"));
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("Ingrese su PIN de 4 dígitos");
+                tarjeta = int.Parse(Console.ReadLine());
+
+                while (tarjeta < 1000 || tarjeta > 9999)
+                {
+                    Console.WriteLine("Por favor, ingrese un PIN de 4 dígitos");
+                    tarjeta = int.Parse(Console.ReadLine());
+                }
+                Console.Clear();
+                Console.WriteLine("Procesando pago, por favor espere...");
+
+                for (int i = 0; i <= 100; i += 10) //simula el proceso
+                {
+                    MostrarBarraProgresoo(i);
+                    Thread.Sleep(200); // Simula un proceso que lleva tiempo
+                }
+                Console.Clear();
+                Console.WriteLine("\npago completado.");
+
+                static void MostrarBarraProgresoo(int progress)
+                {
+                    Console.CursorVisible = false;
+                    Console.Write("\r["); // \r lo regresa al inicio de la línea actual
+
+                    int barLength = 50; // Calcula cuántos caracteres "/" representan el progreso
+                    int progressChars = (int)Math.Floor(progress / (100.0 / barLength));
+
+                    for (int i = 0; i < barLength; i++) // Imprime los caracteres "#" para la barra de progreso
+                    {
+                        if (i <= progressChars)
+                            Console.Write("/");
+                        else
+                            Console.Write(" ");
+                    }
+                    Console.Write($"] {progress}%");
+                }
+                Console.WriteLine("");
+                Console.WriteLine("SU COBRO SE REALIZO CON EXITO");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("*");
+                Console.WriteLine("*");
+                Console.WriteLine("**********************  FACTURA  ************************");
+                Console.WriteLine("*");
+                Console.WriteLine("******* tiempo ------------------------- " + tiempoTranscurrido.TotalMinutes.ToString("F2") + " ***********");
+                Console.WriteLine("******* monto total -------------------- " + cobro.ToString("F2") + " ***********");
+                Console.WriteLine("******* pago ------------------- " + "con tarjeta " + " ***********");
+                Console.WriteLine("*");
+                Console.WriteLine("******* fecha ----------------- " + fechaActual + " *******");
+                Console.WriteLine("******* codigo ---------------- " + numeroAleatorio + " *********************");
+                Console.WriteLine("*");
+                Console.WriteLine("*");
+                Console.WriteLine("*");
+                Console.WriteLine("*");
+                break;
