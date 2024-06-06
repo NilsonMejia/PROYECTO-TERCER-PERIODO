@@ -231,3 +231,79 @@ class Program
                 Console.ReadKey();
                 Console.Clear();
                 break;
+            case 2:        //EMPIEZA EL CASE DE MOTOS 
+
+                int nuevolugar2 = 1;
+                do
+                {
+                    Console.Clear();
+                    int filaa = 4; // cantidad de cuadros en fila
+                    int columnaa = 16; // cantidad de cuadros en columno
+                    int tamañoCuadroo = 8; // tamaño de cada cuadro
+
+                    lugaresOcupados = new bool[filaa, columnaa];
+
+                    // Simular algunos lugares ocupados (ejemplo)
+                    lugaresOcupados[3, 3] = true;
+                    lugaresOcupados[3, 11] = true;
+                    lugaresOcupados[0, 7] = true;
+                    lugaresOcupados[2, 7] = true;
+                    lugaresOcupados[1, 5] = true;
+                    lugaresOcupados[1, 2] = true;
+                    lugaresOcupados[2, 14] = true;
+                    lugaresOcupados[0, 15] = true;
+
+                    DibujarCuadroGrandeee(filaa, columnaa, tamañoCuadroo);
+
+
+                    static void DibujarCuadroGrandeee(int filaa, int columnaa, int tamañoCuadroo)
+                    {
+                        int alturaTotal = filaa * tamañoCuadroo;
+                        int anchuraTotal = columnaa * tamañoCuadroo;
+
+                        for (int i = 0; i < alturaTotal; i++)
+                        {
+                            for (int j = 0; j < anchuraTotal; j++)
+                            {
+                                int filaActual = i / tamañoCuadroo;
+                                int columnaActual = j / tamañoCuadroo;
+
+                                if (lugaresOcupados[filaActual, columnaActual])
+                                {
+                                    if (EsBordeCuadroo(i, j, tamañoCuadroo))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write("*");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write(" ");
+                                    }
+                                }
+                                else
+                                {
+                                    if (EsBordeCuadroo(i, j, tamañoCuadroo))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write("*");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write(" ");
+                                    }
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        Console.WriteLine("");
+                        Console.ResetColor();
+                    }
+
+                    static bool EsBordeCuadroo(int i, int j, int tamañoCuadroo)
+                    {
+                        return (i % tamañoCuadroo == 0 || j % tamañoCuadroo == 0 || i % tamañoCuadroo == tamañoCuadroo - 3 || j % tamañoCuadroo == tamañoCuadroo - 1);
+                    }
+                    ///////////////////////////////////////////////////////////EMPIEZA EL OTRO GRAFICADOR /////////////////////////////////////////////////////////////////
+                    Console.WriteLine(" ");
