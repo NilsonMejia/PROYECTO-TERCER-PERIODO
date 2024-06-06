@@ -7,10 +7,11 @@ class Program
     {
         int salida, vehiculo, pago, tarjeta, parqueo;
         double cambio;
-
+        Console.WriteLine("");
+        Console.WriteLine(" //////////////////////////////////////////////////////////////////////////   ESTACIONAMIENTO ///////////////////////////////////////////////////////////////////");
         Console.WriteLine("");
         Console.ForegroundColor = ConsoleColor.Magenta;
-        Console.WriteLine("////////////////////////////////////////////////////////Registro de entrada////////////////////////////////////////////////////////");
+        Console.WriteLine(" Registro de entrada");
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("");
         Console.WriteLine("");
