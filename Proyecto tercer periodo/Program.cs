@@ -307,3 +307,128 @@ class Program
                     }
                     ///////////////////////////////////////////////////////////EMPIEZA EL OTRO GRAFICADOR /////////////////////////////////////////////////////////////////
                     Console.WriteLine(" ");
+
+                    lugaresOcupados = new bool[filaa, columnaa]; // Inicializar matriz de lugares ocupados
+
+                    lugaresOcupados[3, 3] = true;
+                    lugaresOcupados[3, 11] = true;
+                    lugaresOcupados[0, 7] = true;
+                    lugaresOcupados[2, 7] = true;
+                    lugaresOcupados[1, 5] = true;
+                    lugaresOcupados[1, 2] = true;
+                    lugaresOcupados[2, 14] = true;
+                    lugaresOcupados[0, 15] = true;
+
+                    int filaSeleccionada, columnaSeleccionada;
+
+                    while (true)
+                    {
+                        filaSeleccionada = ObtenerEntradaUsuario($"Seleccione el número de fila del parqueo (1 a {filaa}): ", 1, filaa) - 1;
+                        columnaSeleccionada = ObtenerEntradaUsuario($"Seleccione el número de columna del parqueo (1 a {columnaa}): ", 1, columnaa) - 1;
+
+                        if (lugaresOcupados[filaSeleccionada, columnaSeleccionada])
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("¡Lugar ocupado! Seleccione otro lugar.");
+                            Console.ForegroundColor = ConsoleColor.White;
+                        }
+                        else
+                        {
+                            DibujarCuadroGrandeeee(filaa, columnaa, tamañoCuadroo, filaSeleccionada, columnaSeleccionada);
+                            break;
+                        }
+                    }
+
+                    static int ObtenerEntradaUsuario(string mensaje, int minimo, int maximo)
+                    {
+                        int valor;
+                        while (true)
+                        {
+                            Console.WriteLine(mensaje);
+                            if (int.TryParse(Console.ReadLine(), out valor) && valor >= minimo && valor <= maximo)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Error: Por favor, introduzca un número entre {minimo} y {maximo}.");
+                            }
+                        }
+                        return valor;
+                    }
+
+                    static void DibujarCuadroGrandeeee(int filaa, int columnaa, int tamañoCuadroo, int filaSeleccionada, int columnaSeleccionada)
+                    {
+                        int alturaTotal = filaa * tamañoCuadroo;
+                        int anchuraTotal = columnaa * tamañoCuadroo;
+
+                        for (int i = 0; i < alturaTotal; i++)
+                        {
+                            for (int j = 0; j < anchuraTotal; j++)
+                            {
+                                int filaActual = i / tamañoCuadroo;
+                                int columnaActual = j / tamañoCuadroo;
+
+                                if (filaActual == filaSeleccionada && columnaActual == columnaSeleccionada)
+                                {
+                                    if (EsunBordeCuadro(i, j, tamañoCuadroo))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Blue;
+                                        Console.Write("*");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Blue;
+                                        Console.Write(" ");
+                                    }
+                                }
+                                else if (lugaresOcupados[filaActual, columnaActual])
+                                {
+                                    if (EsunBordeCuadro(i, j, tamañoCuadroo))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write("*");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write(" ");
+                                    }
+                                }
+                                else
+                                {
+                                    if (EsunBordeCuadro(i, j, tamañoCuadroo))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write("*");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write(" ");
+                                    }
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        Console.WriteLine("********************************************************************************************************************************");
+                        Console.ResetColor();
+                    }
+
+                    static bool EsunBordeCuadro(int i, int j, int tamañoCuadroo)
+                    {
+                        return (i % tamañoCuadroo == 0 || j % tamañoCuadroo == 0 || i % tamañoCuadroo == tamañoCuadroo - 3 || j % tamañoCuadroo == tamañoCuadroo - 1);
+                    }
+                    Console.WriteLine("¿desea cambiar su parqueo?");
+                    Console.WriteLine("1. SI     2. NO");
+                    parqueo = int.Parse(Console.ReadLine());
+                    Console.Clear();
+                    Console.Clear();
+                }
+                while (parqueo == nuevolugar2);
+
+                Console.WriteLine("");
+                Console.WriteLine("presione ENTER para obtener su codigo");
+                Console.ReadKey();
+                Console.Clear();
+                break;
