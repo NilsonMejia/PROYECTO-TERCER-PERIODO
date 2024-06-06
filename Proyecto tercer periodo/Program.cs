@@ -1056,3 +1056,53 @@ class Program
                 Console.WriteLine("*");
                 Console.WriteLine("*");
                 break;
+            case 3:
+                Console.WriteLine("Monto a cobrar:" + cobro.ToString("F2"));
+                Console.WriteLine("");
+                Console.WriteLine("");
+                int codigo;
+                Console.WriteLine("Por favor ingrese su codigo de personal para cancelar");
+                codigo = int.Parse(Console.ReadLine());
+
+                while (codigo != 5544 && codigo != 4455)
+                {
+                    Console.WriteLine("Por favor, ingrese bien el codigo");
+                    codigo = int.Parse(Console.ReadLine());
+                }
+                Console.WriteLine("");
+                Console.WriteLine("su registro fue exitoso");
+                Console.WriteLine("");
+                Console.WriteLine("monto a pagar: 0.00");
+                Console.WriteLine("su codigo de salida es: " + numeroAleatorio);
+                break;
+        }
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine("//////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
+        Console.ForegroundColor = ConsoleColor.White;
+
+        Console.WriteLine("");
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+        Console.WriteLine("Registro de salida ");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("Por favor ingrese el código de factura");
+        salida = int.Parse(Console.ReadLine());
+        Console.WriteLine("");
+
+        while (numeroAleatorio != salida)
+        {
+            Console.WriteLine("¡¡¡¡CÓDIGO INCORRECTO!!!!");
+            Console.WriteLine("Por favor ingrese el código establecido en la factura:");
+            salida = int.Parse(Console.ReadLine());
+        }
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Gracias por visitarnos. Que tenga buen viaje.");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.ReadKey();
+    }
+}
