@@ -652,3 +652,94 @@ class Program
                 }
                 while (parqueo == nuevolugar3);
                 break;
+
+            case 4:    //    EMPIEZA EL CASE DE PERSONAL
+                int codigosecreto2 = 4455; // se declara una variable con el codigo de trabajo        CODIGO 4455
+                Console.WriteLine("Por favor ingrese su codigo de acceso");
+                codigo = int.Parse(Console.ReadLine());
+                while (codigosecreto2 != codigo)
+                {
+                    Console.WriteLine("¡¡¡Su código no coincide con su información personal!!!");
+                    Console.WriteLine("Por favor ingrese el código que se le brindó en su trabajo");
+                    codigo = int.Parse(Console.ReadLine());
+                }
+                Console.Clear();
+                Console.WriteLine("Por favor escoja un lugar de carga");
+                Console.WriteLine(" ");
+                Console.WriteLine(" ");
+
+                int filao = 1;
+                int columnao = 16;
+                int tamañoCuadroa = 10;
+
+                int nuevolugar4 = 1;
+                do
+                {
+                    Console.WriteLine("││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││");
+                    Console.WriteLine("││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││");
+                    Console.WriteLine("│││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││  ZONA DE CARGAMENTO  │││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││");
+                    Console.WriteLine("││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││││");
+                    Console.WriteLine("││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││");
+                    Console.WriteLine("││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││");
+                    Console.WriteLine("││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││");
+                    Console.WriteLine("││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││");
+                    Console.WriteLine("││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││││      ││");
+                    lugaresOcupados = new bool[filao, columnao];
+
+                    lugaresOcupados[0, 1] = true;
+                    lugaresOcupados[0, 6] = true;
+                    lugaresOcupados[0, 10] = true;
+                    lugaresOcupados[0, 15] = true;
+
+                    DibujarCuadroGrandea(filao, columnao, tamañoCuadroa);
+
+                    static void DibujarCuadroGrandea(int filao, int columnao, int tamañoCuadroa)
+                    {
+                        int alturaTotal = filao * tamañoCuadroa;
+                        int anchuraTotal = columnao * tamañoCuadroa;
+
+                        for (int i = 0; i < alturaTotal; i++)
+                        {
+                            for (int j = 0; j < anchuraTotal; j++)
+                            {
+                                int filaActual = i / tamañoCuadroa;
+                                int columnaActual = j / tamañoCuadroa;
+
+                                if (lugaresOcupados[filaActual, columnaActual])
+                                {
+                                    if (EsunBordeCuadroe(i, j, tamañoCuadroa))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write("/");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write(" ");
+                                    }
+                                }
+                                else
+                                {
+                                    if (EsunBordeCuadroe(i, j, tamañoCuadroa))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write("/");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write(" ");
+                                    }
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        Console.ResetColor();
+                    }
+
+                    static bool EsunBordeCuadroe(int i, int j, int tamañoCuadroa)
+                    {
+                        return (i % tamañoCuadroa == 0 || j % tamañoCuadroa == 0 || i % tamañoCuadroa == tamañoCuadroa - 3 || j % tamañoCuadroa == tamañoCuadroa - 1);
+                    }
+                    Console.ForegroundColor = ConsoleColor.White;
+                    ///////////////////////////////////////////////////////////EMPIEZA EL OTRO GRAFICADOR /////////////////////////////////////////////////////////////////
