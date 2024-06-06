@@ -432,3 +432,104 @@ class Program
                 Console.ReadKey();
                 Console.Clear();
                 break;
+            case 3: //    EMPIEZA EL CASE DE PERSONAL
+                string nombre, apellido;
+                int codigosecreto = 5544; // se declara una variable con el codigo de trabajo        CODIGO 5544
+                int codigo;
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("verificacion de personal");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Por favor ingrese su nombre"); //se le piden datos para verificar su identificacion 
+                nombre = Console.ReadLine();
+                Console.WriteLine("Por favor ingrese su apellido");
+                apellido = Console.ReadLine();
+                Console.WriteLine("Por favor ingrese su codigo de acceso");
+                codigo = int.Parse(Console.ReadLine());
+                while (codigosecreto != codigo) //si el codigo no es el que se coloco arriba no va poder seguir el usuario al estacionamiento de personal
+                {
+                    Console.WriteLine("¡¡¡Su código no coincide con su información personal!!!");
+                    Console.WriteLine("Por favor ingrese el código que se le brindó en su trabajo");
+                    codigo = int.Parse(Console.ReadLine());
+                }
+                Console.Clear();
+                Console.WriteLine("Bienvenido " + nombre + " " + apellido);
+                Console.WriteLine(" ");
+                Console.WriteLine("Por favor escoja un parqueo de su agrado!!");
+                int filaaa = 5;
+                int columnaaa = 16;
+                int tamañoCuadrooo = 9;
+
+                int nuevolugar3 = 1;
+                do
+                {
+                    lugaresOcupados = new bool[filaaa, columnaaa];
+
+                    lugaresOcupados[3, 3] = true;
+                    lugaresOcupados[3, 11] = true;
+                    lugaresOcupados[0, 7] = true;
+                    lugaresOcupados[2, 7] = true;
+                    lugaresOcupados[1, 5] = true;
+                    lugaresOcupados[1, 2] = true;
+                    lugaresOcupados[2, 14] = true;
+                    lugaresOcupados[4, 15] = true;
+                    lugaresOcupados[4, 2] = true;
+                    lugaresOcupados[4, 9] = true;
+                    lugaresOcupados[4, 5] = true;
+                    lugaresOcupados[0, 13] = true;
+
+                    DibujarCuadroGrandeeee(filaaa, columnaaa, tamañoCuadrooo);
+
+
+                    static void DibujarCuadroGrandeeee(int filaaa, int columnaaa, int tamañoCuadrooo)
+                    {
+                        int alturaTotal = filaaa * tamañoCuadrooo;
+                        int anchuraTotal = columnaaa * tamañoCuadrooo;
+
+                        for (int i = 0; i < alturaTotal; i++)
+                        {
+                            for (int j = 0; j < anchuraTotal; j++)
+                            {
+                                int filaActual = i / tamañoCuadrooo;
+                                int columnaActual = j / tamañoCuadrooo;
+
+                                if (lugaresOcupados[filaActual, columnaActual])
+                                {
+                                    if (EsunBordeCuadroo(i, j, tamañoCuadrooo))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write("/");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.Write(" ");
+                                    }
+                                }
+                                else
+                                {
+                                    if (EsunBordeCuadroo(i, j, tamañoCuadrooo))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write("/");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.Write(" ");
+                                    }
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        Console.ResetColor();
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+
+                    static bool EsunBordeCuadroo(int i, int j, int tamañoCuadrooo)
+                    {
+                        return (i % tamañoCuadrooo == 0 || j % tamañoCuadrooo == 0 || i % tamañoCuadrooo == tamañoCuadrooo - 3 || j % tamañoCuadrooo == tamañoCuadrooo - 1);
+                    }
+                    ///////////////////////////////////////////////////////////EMPIEZA EL OTRO GRAFICADOR /////////////////////////////////////////////////////////////////
